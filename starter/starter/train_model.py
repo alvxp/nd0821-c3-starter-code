@@ -11,8 +11,8 @@ import pickle
 
 
 # Add code to load in the data.
-file_path = "../data/census.csv"
-data = pd.read_csv(file_path)
+file_path = os.path.dirname(__file__)
+data = pd.read_csv(os.path.join(file_path, "./data/census.csv"))
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)
@@ -42,10 +42,10 @@ model_path = os.path.join(file_path, "./model/trained_model.pkl")
 pickle.dump(new_model, open(model_path, "wb"))
 
 encoder_path = os.path.join(file_path, "./model/encoder.pkl")
-pickle.dump(new_model, open(encoder_path, "wb"))
+pickle.dump(encoder, open(encoder_path, "wb"))
 
 lb_path = os.path.join(file_path, "./model/lb.pkl")
-pickle.dump(new_model, open(lb_path, "wb"))
+pickle.dump(lb, open(lb_path, "wb"))
 
 preds = inference(new_model, X_test)
 precision, recall, fbeta = compute_model_metrics(y_test, preds)
