@@ -38,9 +38,11 @@ class InputData(BaseModel):
     hours_per_week: int = Field(None, examples=[40, 13])
     native_country: str = Field(None, examples=["United-States", "Mexico"])
 
+
 @app.get("/")
 async def say_hello():
     return {"message": "Hello World!"}
+
 
 @app.post('/predict')
 async def predict(data: InputData):
@@ -56,10 +58,9 @@ async def predict(data: InputData):
     ]
 
     sample = pd.DataFrame(data, index=[0])
-    input_data = pd.DataFrame.from_dict(sample)
 
     X, _, _, _ = process_data(
-        input_data,
+        sample,
         categorical_features=cat_features,
         label=None,
         training=False,
@@ -75,6 +76,7 @@ async def predict(data: InputData):
     data['prediction'] = prediction
 
     return data
+
 
 if __name__ == '__main__':
     pass
