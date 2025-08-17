@@ -1,8 +1,8 @@
 # Script to train machine learning model.
 
 from sklearn.model_selection import train_test_split
-from .data import process_data
-from .model import train_model, compute_model_metrics, inference, compute_slice_metrics
+from starter.data import process_data
+from starter.model import train_model, compute_model_metrics, inference, compute_slice_metrics
 
 # Add the necessary imports for the starter code.
 import os
