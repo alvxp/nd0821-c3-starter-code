@@ -13,13 +13,13 @@ app = FastAPI()
 file_path = os.path.dirname(__file__)
 save_path = os.path.join(file_path, "model")
 
-model_path = os.path.join(file_path, "trained_model.pkl")
+model_path = os.path.join(save_path, "trained_model.pkl")
 model_used = pickle.load(open(model_path, "rb"))
 
-encoder_path = os.path.join(file_path, "encoder.pkl")
+encoder_path = os.path.join(save_path, "encoder.pkl")
 encoder = pickle.load(open(encoder_path, "rb"))
 
-lb_path = os.path.join(file_path, "lb.pkl")
+lb_path = os.path.join(save_path, "lb.pkl")
 lb = pickle.load(open(lb_path, "rb"))
 
 
