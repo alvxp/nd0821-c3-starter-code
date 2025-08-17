@@ -37,6 +37,8 @@ jobs:
     - name: Train the model
       run: |
         python starter/train_model.py
+    - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=${{ github.workspace }}/starter" >> $GITHUB_ENV
     - name: Test with pytest
       run: |
         pytest -vv
