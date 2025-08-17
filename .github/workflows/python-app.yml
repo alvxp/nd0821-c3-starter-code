@@ -40,5 +40,5 @@ jobs:
     - name: Run in background
       working-directory: starter
       run: |
-        cd starter/..
-        uvicorn starter.main:app
+        working-directory: ./nd0821-c3-starter-code/starter
+        uvicorn main:app
