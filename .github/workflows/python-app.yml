@@ -37,11 +37,9 @@ jobs:
     - name: Train the model
       run: |
         python starter/train_model.py
-    - name: Set PYTHONPATH
-      run: echo "PYTHONPATH=${{ github.workspace }}/starter" >> $GITHUB_ENV
     - name: Test with pytest
       run: |
-        pytest -vv
+        PYTHONPATH=${{ github.workspace }}/starter pytest -vv
     - name: Run in background
       working-directory: starter
       run: uvicorn main:app
