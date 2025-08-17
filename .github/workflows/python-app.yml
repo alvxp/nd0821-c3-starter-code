@@ -38,7 +38,6 @@ jobs:
       run: |
         pytest -vv
     - name: Run in background
-      working-directory: starter
+      working-directory: ./nd0821-c3-starter-code/starter
       run: |
-        working-directory: ./nd0821-c3-starter-code/starter
         uvicorn main:app
