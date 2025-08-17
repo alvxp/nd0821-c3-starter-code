@@ -40,4 +40,4 @@ jobs:
     - name: Run in background
       working-directory: .
       run: |
-        uvicorn main:app
+        uvicorn starter.main:app
