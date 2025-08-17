@@ -35,7 +35,6 @@ def test_post_pos():
     assert r.status_code == 200
     assert r.json()["prediction"] == ">50K"
 
-
 def test_post_neg():
     data = {"age": 39,
             "workclass": "State-gov",
