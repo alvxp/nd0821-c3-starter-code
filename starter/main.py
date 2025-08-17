@@ -73,10 +73,9 @@ async def predict(data: InputData):
     if prediction[0] > 0.5:
         prediction = '>50K'
     else:
-        prediction = '<=50K',
-    data['prediction'] = prediction
+        prediction = '<=50K'
 
-    return data
+    return {**data.dict(), "prediction": prediction}
 
 
 if __name__ == '__main__':
