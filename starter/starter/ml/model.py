@@ -62,17 +62,3 @@ def inference(model, X):
     """
     preds = model.predict(X)
     return preds
-
-
-
-# def output_slices(df, features, y, preds):
-    """ Function for calculating descriptive stats on slices of the Iris dataset."""
-    for var in df[features].unique():
-        clean_df = df[df[features] == var]
-        mean = df_temp[features].mean()
-        stddev = df_temp[features].std()
-        print(f"Class: {var}")
-        print(f"{features} mean: {mean:.4f}")
-        print(f"{features} stddev: {stddev:.4f}")
-    print()
-
