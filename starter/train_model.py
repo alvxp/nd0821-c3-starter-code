@@ -38,6 +38,7 @@ X_test, y_test, encoder, lb = process_data(
 # Train and save a model.
 new_model = train_model(X_train, y_train)
 save_path = os.path.join(file_path, "model")
+os.makedirs(save_path, exist_ok=True)
 
 model_path = os.path.join(save_path, "trained_model.pkl")
 pickle.dump(new_model, open(model_path, "wb"))
