@@ -16,19 +16,19 @@ def test_get_path_query():
 
 
 def test_post_pos():
-    data = {"age": 52,
-            "workclass": "Self-emp-not-inc",
-            "fnlwgt": 209642,
-            "education": "HS-grad",
-            "education_num": 9,
-            "marital_status": "Married-civ-spouse",
-            "occupation": "Exec-managerial",
-            "relationship": "Husband",
+    data = {"age": 31,
+            "workclass": "Private",
+            "fnlwgt": 45781,
+            "education": "Masters",
+            "education_num": 14,
+            "marital_status": "Never-married",
+            "occupation": "Prof-specialty",
+            "relationship": "Not-in-family",
             "race": "White",
-            "sex": "Male",
-            "capital_gain": 0,
+            "sex": "Female",
+            "capital_gain": 14084,
             "capital_loss": 0,
-            "hours_per_week": 45,
+            "hours_per_week": 50,
             "native_country": "United-States"
             }
     r = client.post("/predict", json=data)

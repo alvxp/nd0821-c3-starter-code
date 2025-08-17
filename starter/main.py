@@ -70,7 +70,7 @@ async def predict(data: InputData):
     )
 
     prediction = inference(model=model_used, X=X)
-    if prediction[0] < 0.5:
+    if prediction[0] > 0.5:
         prediction = '>50K'
     else:
         prediction = '<=50K'
