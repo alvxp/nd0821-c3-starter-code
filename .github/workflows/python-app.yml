@@ -38,6 +38,5 @@ jobs:
       run: |
         pytest -vv
     - name: Run in background
-      working-directory: .
       run: |
         uvicorn starter.main:app
