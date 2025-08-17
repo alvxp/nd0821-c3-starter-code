@@ -2,7 +2,7 @@
 
 from sklearn.model_selection import train_test_split
 from starter.ml.data import process_data
-from starter.ml.model import train_model, compute_model_metrics, inference
+from starter.ml.model import train_model, compute_model_metrics, inference, compute_slice_metrics
 
 # Add the necessary imports for the starter code.
 import os
@@ -51,3 +51,15 @@ pickle.dump(lb, open(lb_path, "wb"))
 
 preds = inference(new_model, X_test)
 precision, recall, fbeta = compute_model_metrics(y_test, preds)
+
+
+slice_results = compute_slice_metrics(
+    model=new_model, encoder=encoder, lb=lb, features='education', data=test, cat_features=cat_features)
+
+with open('slice_output.txt', 'w') as f:
+    for key, value in slice_results.items():
+        f.write(f"Education = {key}, "
+                f"Precision: {value[0]:.4f}, "
+                f"Recall: {value[1]:.4f}, "
+                f"F1: {value[2]:.4f}\n")
+

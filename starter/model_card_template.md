@@ -38,7 +38,11 @@ To use the data for training a One Hot Encoder was used on the features and a la
 After pre-processing the data, it was split into training (80%) and testing sets (20%). 
 
 ## Metrics
-_Please include the metrics used and your model's performance on those metrics._
+
+The metrics are given below:
+- precision: 0.7755102040816326
+- recall: 0.6666666666666666
+- fbeta: 0.7169811320754716
 
 ## Ethical Considerations
 
