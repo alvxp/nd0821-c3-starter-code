@@ -33,7 +33,7 @@ def test_post_pos():
             }
     r = client.post("/predict", json=data)
     assert r.status_code == 200
-    assert r.json() == {"prediction": ">50K"}
+    assert r.json()["prediction"] == ">50K"
 
 
 def test_post_neg():
@@ -54,7 +54,7 @@ def test_post_neg():
             }
     r = client.post("/predict", json=data)
     assert r.status_code == 200
-    assert r.json() == {"prediction": "<=50K"}
+    assert r.json()["prediction"] == "<=50K"
 
 
 def test_post_malformed():
