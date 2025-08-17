@@ -2,7 +2,7 @@ import os, sys
 import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin
 from sklearn.metrics import precision_score, recall_score, fbeta_score
-from starter.starter.ml.model import train_model, compute_model_metrics, inference
+from starter.ml.model import train_model, compute_model_metrics, inference
 
 def test_train_model():
     X_train = np.array([[0, 0], [1, 1], [1, 0], [0, 1]])
