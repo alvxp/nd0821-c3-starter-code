@@ -58,7 +58,7 @@ async def predict(data: InputData):
         "native-country",
     ]
 
-    sample = pd.DataFrame(data, index=[0])
+    sample = pd.DataFrame([data.model_dump()])
 
     X, _, _, _ = process_data(
         sample,
