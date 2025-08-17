@@ -1,8 +1,8 @@
 # Put the code for your API here.
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
-from starter.starter.ml.data import process_data
-from starter.starter.ml.model import inference
+from ml.data import process_data
+from ml.model import inference
 import uvicorn
 import pandas as pd
 import pickle
