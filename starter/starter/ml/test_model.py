@@ -2,7 +2,7 @@ import os, sys
 import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin
 from sklearn.metrics import precision_score, recall_score, fbeta_score
-from model import train_model, compute_model_metrics, inference
+from starter.ml.model import train_model, compute_model_metrics, inference
 
 root_dir = os.path.join(os.path.dirname(__file__), '..')
 sys.path.append(root_dir)
