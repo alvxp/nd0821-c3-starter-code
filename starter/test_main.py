@@ -2,7 +2,7 @@ import os, sys
 import json
 from fastapi.testclient import TestClient
 
-sys.path.append(os.path.dirname(__file__))
+sys.path.append(os.path.join(os.path.dirname(__file__), "starter"))
 
 from main import app
 
