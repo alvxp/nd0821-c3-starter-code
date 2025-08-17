@@ -12,7 +12,7 @@ client = TestClient(app)
 def test_get_path_query():
     r = client.get("/")
     assert r.status_code == 200
-    assert r.json() == "Hello World!"
+    assert r.json() == {'message': "Hello World!"}
 
 
 def test_post_pos():
@@ -31,7 +31,7 @@ def test_post_pos():
             "hours_per_week": 45,
             "native_country": "United-States"
             }
-    r = client.post("/predict", json=json.dumps(data))
+    r = client.post("/predict", json=data)
     assert r.status_code == 200
     assert r.json() == {"prediction": ">50K"}
 
@@ -52,7 +52,7 @@ def test_post_neg():
             "hours_per_week": 40,
             "native_country": "United-States"
             }
-    r = client.post("/predict", json=json.dumps(data))
+    r = client.post("/predict", json=data)
     assert r.status_code == 200
     assert r.json() == {"prediction": "<=50K"}
 
